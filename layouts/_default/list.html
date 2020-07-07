@@ -6,25 +6,26 @@
     {{ partial "navbar-2.html" (dict "baseURL" .Site.BaseURL "title" .Site.Title "hasToggleButton" true "navBrandURL"  .Site.BaseURL ) }}
 {{ end }}
 
-{{ define "content" }}
-<div class="sidebar" id="sidebar">
+{{ define "sidebar" }}
+  <div class="sidebar" id="sidebar">
     <div class="sidebar-tree">
       <input type="text" name="filtr-search" value="" placeholder="Search" data-search="" id="search-box" />
       <ul class="tree" id="tree">
-        <li id="list-heading"><a href="#" data-filter="all">{{.Title}}</a></li>
+        <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
         <div class="subtree">
-            {{ partial "sections.html" .Sections }}
+            {{ partial "sidebar.html" .Site.Menus.sidebar }}
         </div>
       </ul>
     </div>
   </div>
+{{ end }}
+
+{{ define "content" }}
   <div class="content container-fluid" id="content">
     <div class="content-cards">
       <div class="container-fluid filtr-container post-cards" id="post-cards">
-        {{ range (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-          {{ partial "cards/post.html" . }}
-        {{ end }}
-        {{/*  {{ $paginator := .Paginate .Site.RegularPages 120 }}
+        {{ partial "posts.html" . }}
+        {{/*  {{ $paginator := .Paginate .Site.RegularPages 10 }}
         {{ range $paginator.Pages }}
           {{ partial "cards/post.html" . }}
         {{ end }}  */}}

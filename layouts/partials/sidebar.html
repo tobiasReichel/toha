@@ -1,0 +1,10 @@
+{{ range . }}
+  {{ if .HasChildren }}
+    <li><i class="fas fa-plus-circle"></i><a href="{{.URL}}">{{.Name}}</a></li>
+    <ul>
+      {{ partial "sidebar.html" .Children }}
+    </ul>
+  {{ else }}
+    <li><a href="{{.URL}}">{{.Name}}</a></li>
+  {{ end }}
+{{ end }}

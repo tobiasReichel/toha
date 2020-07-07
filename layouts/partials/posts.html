@@ -1,0 +1,8 @@
+{{ if eq .Kind "section" }}
+    {{ range .RegularPages }}
+        {{ partial "cards/post.html" . }}
+    {{ end }}
+    {{ range .Sections }}
+        {{ partial "posts.html" . }}
+    {{ end }}
+{{ end }}
