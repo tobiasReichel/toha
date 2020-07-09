@@ -44,45 +44,10 @@
 }
 
 .tree,
-.tree ul {
+ul {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.tree ul {
-  margin-left: 0.5rem;
-  position: relative;
-}
-
-.tree ul ul {
-  margin-left: 0.5em;
-}
-
-.tree ul:before {
-  content: "";
-  display: block;
-  width: 0;
-  position: absolute;
-  top: -10px;
-  left: -3px;
-  bottom: 16px;
-  border-left: 1px solid;
-}
-
-.subtree {
-  padding-left: 0.7rem;
-}
-
-.subtree:before {
-  content: "";
-  display: block;
-  width: 0;
-  position: absolute;
-  top: 6.5rem;
-  left: 0.5rem;
-  bottom: 16px;
-  border-left: 1px solid;
 }
 
 .tree li {
@@ -91,25 +56,6 @@
   line-height: 2em;
   color: #3c4858;
   position: relative;
-}
-
-.subtree li:before {
-  content: "";
-  display: block;
-  width: 20px;
-  height: 0;
-  border-top: 1px solid;
-  margin-top: -1px;
-  position: absolute;
-  top: 18px;
-  left: -3px;
-}
-
-.subtree li:last-child:before {
-  background: #f9fafc;
-  height: auto;
-  top: 1em;
-  bottom: 0;
 }
 
 .tree li a {
@@ -135,13 +81,61 @@
   margin-left: 5px;
 }
 
-.tree ul {
-  display: none;
-}
-
 .tree .active,
 .tree .active > ul {
   display: block;
+}
+
+.subtree {
+  padding-left: 0.7rem;
+}
+
+.subtree:before {
+  content: "";
+  display: block;
+  width: 0;
+  position: absolute;
+  top: 6.5rem;
+  left: 0.5rem;
+  bottom: 0.9rem;
+  border-left: 1px solid;
+}
+
+.subtree ul,
+ul > ul {
+  position: relative;
+  padding-left: 0.5rem;
+  display: none;
+}
+
+.subtree ul:before {
+  content: "";
+  display: block;
+  width: 0;
+  position: absolute;
+  top: -10px;
+  left: 0.3rem;
+  bottom: 0.9rem;
+  border-left: 1px solid;
+}
+
+.subtree li:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 0;
+  border-top: 1px solid;
+  margin-top: -1px;
+  position: absolute;
+  top: 18px;
+  left: -3px;
+}
+
+.subtree li:last-child:before {
+  background: #f9fafc;
+  height: auto;
+  top: 1.1rem;
+  bottom: 0;
 }
 
 a.focused {

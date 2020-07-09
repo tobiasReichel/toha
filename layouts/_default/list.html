@@ -10,7 +10,7 @@
 {{ define "sidebar" }}
   <div class="sidebar" id="sidebar">
     <div class="sidebar-tree">
-      <input type="text" name="filtr-search" value="" placeholder="Search" data-search="" id="search-box" />
+      <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
       <ul class="tree" id="tree">
         <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
         <div class="subtree">
@@ -24,7 +24,7 @@
 {{ define "content" }}
   <div class="content container-fluid" id="content">
     <div class="content-cards">
-      <div class="container-fluid filtr-container post-cards" id="post-cards">
+      <div class="container-fluid post-card-holder" id="post-card-holder">
         {{ $paginator := .Paginate .RegularPagesRecursive 12 }}
         {{ range $paginator.Pages }}
           {{ partial "cards/post.html" . }}

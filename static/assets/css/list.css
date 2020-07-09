@@ -20,26 +20,29 @@
   padding-bottom: 20px;
 }
 
-.post-cards {
+.post-card-holder {
   margin: 32px;
+  margin-left: auto;
 }
 
-.post-cards .filtr-item {
-  width: 23rem !important;
+.post-card-holder .post-card {
+  width: 23rem;
+  display: inline-flex;
+  min-height: 27rem;
 }
 
-.post-cards .card {
+.post-card-holder .card {
   margin: 5px;
   position: relative;
 }
 
-.post-cards .card .card-footer span {
+.post-card-holder .card .card-footer span {
   font-size: 10pt;
   color: #6c757d !important;
   padding-top: 5px;
 }
 
-.post-cards .card .card-footer {
+.post-card-holder .card .card-footer {
   background: #fff;
   margin-top: auto;
 }
@@ -55,7 +58,7 @@
   -webkit-box-orient: vertical;
 }
 
-.post-cards .post-card-link {
+.post-card-holder .post-card-link {
   text-decoration: none;
 }
 
@@ -79,16 +82,20 @@
 
 /*-------------- Media Queries ---------- */
 
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
   .content-cards {
     padding-left: 0px;
   }
-  .post-cards {
-    margin-left: 15px;
+  .post-card-holder {
+    margin-left: 0px;
   }
-  .post-cards .filtr-item {
-    width: 22rem !important;
-    padding: 3px;
+  .post-card-holder .post-card{
+    width: 22rem;
+  }
+}
+@media (max-width: 1024px) {
+  .post-card-holder .post-card{
+    width: 21rem;
   }
 }
 
@@ -110,26 +117,26 @@
     padding-left: 0px;
   }
 
-  .post-cards {
+  .post-card-holder {
     margin: 0;
     margin-top: 32px;
   }
 
-  .post-cards .filtr-item {
+  .post-card-holder .filtr-item {
     margin: 10px;
     width: 47vw !important;
   }
 
-  .post-cards .card {
+  .post-card-holder .card {
     max-width: 47vw !important;
   }
 
-  .content.overley .post-cards .filtr-item {
+  .content.overley .post-card-holder .filtr-item {
     margin: 10px;
     width: 55vw !important;
   }
 
-  .content.overley .post-cards .card {
+  .content.overley .post-card-holder .card {
     max-width: 55vw !important;
   }
 }
@@ -164,34 +171,34 @@
     -webkit-transition: all ease-out 0.5s;
   }
 
-  .post-cards {
+  .post-card-holder {
     margin: 0;
     margin-top: 32px;
     transition: all ease-out 0.5s;
     -webkit-transition: all ease-out 0.5s;
   }
 
-  .content.overley .post-cards {
+  .content.overley .post-card-holder {
     margin: 0;
     transition: all ease-out 0.5s;
     -webkit-transition: all ease-out 0.5s;
   }
 
-  .post-cards .filtr-item {
+  .post-card-holder .filtr-item {
     margin: 0px;
     width: 95vw !important;
   }
 
-  .post-cards .card {
+  .post-card-holder .card {
     max-width: 90vw !important;
   }
 
-  .content.overley .post-cards .filtr-item {
+  .content.overley .post-card-holder .filtr-item {
     margin: 0px;
     width: 95vw !important;
   }
 
-  .content.overley .post-cards .card {
+  .content.overley .post-card-holder .card {
     max-width: 95vw !important;
   }
 }
