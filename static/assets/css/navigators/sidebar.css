@@ -1,10 +1,53 @@
-.sidebar {
-  width: 400px;
-  background: #f9fafc;
-  min-height: 100vh;
+.sidebar-holder{
+  background-color: #f9fafc;
+  width: 20rem;
+  height: 100vh;
   overflow: auto;
   transition: all ease-out 0.3s;
   -webkit-transition: all ease-out 0.3s;
+}
+
+
+.sidebar-holder.hide{
+  width: 0rem;
+  transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
+}
+.sidebar {
+  background: #f9fafc;
+  transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
+}
+
+#sidebar-toggler{
+  position: fixed;
+  top: 4.5rem;
+  left: 20rem;
+  border: none;
+  z-index: 1000;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+#sidebar-toggler.align-left{
+  left: 0rem;
+}
+#sidebar-toggler:focus{
+  box-shadow: none;
+  border: none;
+  background-color: #3c4858;
+}
+#sidebar-toggler:hover{
+  background-color: #248aaa;
+}
+
+.sidebar-tree {
+  margin-left: 2rem;
+  margin-top: 2.5rem;
+  position: absolute;
+  width: max-content;
 }
 
 .sidebar.hide {
@@ -16,7 +59,7 @@
 }
 
 #search-box {
-  width: 250px;
+  width: 17rem;
   height: 35px;
   padding-left: 15px;
   margin-top: 30px;
@@ -31,12 +74,6 @@
 #search-box:focus {
   border: 1pt solid #248aaa;
   outline: none;
-}
-
-.sidebar-tree {
-  margin-left: 2rem;
-  margin-top: 2.5rem;
-  position: fixed;
 }
 
 #list-heading {
@@ -64,6 +101,12 @@ ul {
   transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
 }
+
+.tree li a.active{
+  display: inline;
+  color: #2098d1;
+}
+
 .tree li a:hover {
   margin-left: 3px;
   color: #2098d1;

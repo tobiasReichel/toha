@@ -1,12 +1,109 @@
 body {
   background-color: #e5e9f2;
+  position: relative;
 }
 .read-area {
   background-color: #f9fafc;
 }
 
 .wrapper {
+  display: flex;
   padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  justify-content: space-between;
+  position: relative;
+}
+
+.content {
+  background: #e5e9f2;
+  padding: 0;
+  flex: 100%;
+  position: relative;
+}
+
+.toc-holder{
+  position: fixed;
+  width: 22rem;
+  max-height: 100vh;
+  right: 0;
+  top: 4.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f9fafc;
+  margin-right: 1rem;
+  transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
+}
+
+.toc-holder.minimize{
+  width: fit-content;
+  height: fit-content;
+  transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
+  margin-right: 0;
+}
+
+.toc-holder.minimize .toc, .toc-holder.minimize hr,.toc-holder.minimize h5 {
+  display: none;
+  transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
+}
+
+.toc{
+  position: relative;
+  padding-top: 0px;
+  transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
+}
+
+#toc-toggler{
+  position: relative;
+  float: right;
+  box-shadow: none;
+  border: none;
+  background-color: #f9fafc;
+}
+
+.toc-holder.minimize #toc-toggler{
+  background-color: #3c4858;
+  color: #f9fafc;
+}
+.toc nav{
+  padding-top: 0px;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
+}
+
+.toc ul{
+  padding-left: 0.5rem;
+  width: 100%;
+}
+
+
+.toc .nav-link{
+  width: 100%;
+  padding: 0;
+  padding-left: 0.5rem;
+  transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
+  color: #1c2d41;
+}
+
+.toc .nav-link:hover, .toc .nav-link:focus, .toc .nav-link.active{
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+  background-color: #248aaa;
+  min-width: 19rem;
+  /* max-width: 19rem; */
+  color: #f9f9f9;
+  transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
 }
 
 .hero-area {
@@ -158,13 +255,13 @@ a.header-anchor code{
   display: none;
 }
 
-ul > ol,
-ol > ul,
-ul > ul,
-ol > ol,
-li > ol,
-li > ul {
-  padding-inline-start: 25px;
+.content ul > ol,
+.content ol > ul,
+.content ul > ul,
+.content ol > ol,
+.content li > ol,
+.content li > ul {
+  padding-inline-start: 1rem;
 }
 
 kbd {
