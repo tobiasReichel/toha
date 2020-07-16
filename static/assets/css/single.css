@@ -16,28 +16,52 @@ body {
   position: relative;
 }
 
-.content {
-  background: #e5e9f2;
-  padding: 0;
-  flex: 100%;
-  position: relative;
+.sidebar-section {
+  flex: 20%;
+  background-color: lightsalmon;
 }
 
-.toc-holder{
+.sidebar-holder {
   position: fixed;
-  width: 22rem;
-  max-height: 100vh;
-  right: 0;
+  background-color: #f9fafc;
+  min-height: 100vh;
+  width: fit-content;
+  transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
+  box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
+}
+
+.content-section {
+  flex: 60%;
+  background-color: lightseagreen;
+  padding: 0;
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.content {
+  background: #e5e9f2;
+}
+.toc-section {
+  flex: 20%;
+  /* position: fixed; */
+  /* width: 22rem; */
+  min-height: 100vh;
+  background-color: lightpink;
+}
+
+.toc-holder {
+  position: fixed;
   top: 4.5rem;
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #f9fafc;
   margin-right: 1rem;
+  box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
   transition: all ease-out 0.3s;
   -webkit-transition: all ease-out 0.3s;
 }
-
-.toc-holder.minimize{
+.toc-holder.minimize {
   width: fit-content;
   height: fit-content;
   transition: all ease-out 0.3s;
@@ -45,20 +69,22 @@ body {
   margin-right: 0;
 }
 
-.toc-holder.minimize .toc, .toc-holder.minimize hr,.toc-holder.minimize h5 {
+.toc-holder.minimize .toc,
+.toc-holder.minimize hr,
+.toc-holder.minimize h5 {
   display: none;
   transition: all ease-out 0.3s;
   -webkit-transition: all ease-out 0.3s;
 }
 
-.toc{
+.toc {
   position: relative;
   padding-top: 0px;
   transition: all ease-out 0.3s;
   -webkit-transition: all ease-out 0.3s;
 }
 
-#toc-toggler{
+#toc-toggler {
   position: relative;
   float: right;
   box-shadow: none;
@@ -66,11 +92,11 @@ body {
   background-color: #f9fafc;
 }
 
-.toc-holder.minimize #toc-toggler{
+.toc-holder.minimize #toc-toggler {
   background-color: #3c4858;
   color: #f9fafc;
 }
-.toc nav{
+.toc nav {
   padding-top: 0px;
   margin-top: 0px;
   display: flex;
@@ -80,13 +106,12 @@ body {
   -webkit-transition: all ease-out 0.3s;
 }
 
-.toc ul{
+.toc ul {
   padding-left: 0.5rem;
   width: 100%;
 }
 
-
-.toc .nav-link{
+.toc .nav-link {
   width: 100%;
   padding: 0;
   padding-left: 0.5rem;
@@ -95,7 +120,9 @@ body {
   color: #1c2d41;
 }
 
-.toc .nav-link:hover, .toc .nav-link:focus, .toc .nav-link.active{
+.toc .nav-link:hover,
+.toc .nav-link:focus,
+.toc .nav-link.active {
   padding-left: 1rem;
   padding-right: 0.5rem;
   background-color: #248aaa;
@@ -229,25 +256,25 @@ pre {
   margin: 5px;
 }
 
-pre>code {
+pre > code {
   padding: 10px !important;
 }
 
-a.header-anchor{
+a.header-anchor {
   text-decoration: none;
   color: #1c2d41;
 }
 
-a.header-anchor i{
+a.header-anchor i {
   font-size: 10pt;
   color: #3c4858;
   display: none;
   margin-left: 0.5rem;
 }
-a.header-anchor:hover i{
+a.header-anchor:hover i {
   display: inline-block;
 }
-a.header-anchor code{
+a.header-anchor code {
   color: #e83e8c;
 }
 
@@ -323,7 +350,7 @@ mark {
   padding: 10px;
 }
 
-.btn-improve-page{
+.btn-improve-page {
   text-align: right;
 }
 
