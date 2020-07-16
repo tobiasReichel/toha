@@ -74,6 +74,6 @@ function toggleSidebar() {
 function toggleTOC() {
   document.getElementById("toc-holder").classList.toggle("minimize");
   let btn = document.getElementById("toc-toggler");
-   btn.children[0].classList.toggle("fa-compress");
-   btn.children[0].classList.toggle("fa-stream");
+  btn.children[0].classList.toggle("fa-compress");
+  btn.children[0].classList.toggle("fa-stream");
 }

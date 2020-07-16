@@ -1,18 +1,33 @@
+.sidebar-section {
+  flex: 20%;
+  max-width: 20%;
+  /* background-color: lightsalmon; */
+}
 
-
-.sidebar-holder.hide{
+.sidebar-holder {
+  top: 2.5rem;
+  position: sticky;
+  background-color: #f9fafc;
+  width: 100%;
+  max-width: 22rem;
+  transition: all ease-out 0.3s;
+  -webkit-transition: all ease-out 0.3s;
+  box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
+  overflow: auto;
+}
+.sidebar-holder.hide {
   width: 0rem;
   transition: all ease-out 0.3s;
   -webkit-transition: all ease-out 0.3s;
 }
 .sidebar {
   background: #f9fafc;
-  margin-top: 2.5rem;
+  min-height: 100vh;
   transition: all ease-out 0.3s;
   -webkit-transition: all ease-out 0.3s;
 }
 
-#sidebar-toggler{
+#sidebar-toggler {
   position: fixed;
   top: 4.5rem;
   left: 20rem;
@@ -24,20 +39,20 @@
   border-bottom-left-radius: 0px;
 }
 
-#sidebar-toggler.align-left{
+#sidebar-toggler.align-left {
   left: 0rem;
 }
-#sidebar-toggler:focus{
+#sidebar-toggler:focus {
   box-shadow: none;
   border: none;
   background-color: #3c4858;
 }
-#sidebar-toggler:hover{
+#sidebar-toggler:hover {
   background-color: #248aaa;
 }
 
 .sidebar-tree {
-  margin-left: 2rem;
+  padding-left: 1rem;
   position: relative;
   width: max-content;
 }
@@ -51,8 +66,8 @@
 }
 
 #search-box {
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
   width: -webkit-fill-available;
   height: 35px;
   padding-left: 15px;
@@ -96,7 +111,7 @@ ul {
   -webkit-transition: all 0.3s ease-out;
 }
 
-.tree li a.active{
+.tree li a.active {
   display: inline;
   color: #2098d1;
 }
@@ -133,7 +148,7 @@ ul {
   width: 0;
   position: absolute;
   top: 2.5rem;
-  left: 0.5rem;
+  left: 1.5rem;
   bottom: 0.9rem;
   border-left: 1px solid;
 }

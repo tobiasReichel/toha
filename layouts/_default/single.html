@@ -31,7 +31,6 @@
 
 {{ define "content" }}
 <section class="content-section">
-  <button id="sidebar-toggler" class="btn btn-sm btn-dark" onclick="toggleSidebar();"><i class="fas fa-bars"></i></button>
   <div class="content">
     <div class="container p-0 read-area">
       <!--Hero Area-->
@@ -79,12 +78,9 @@
 {{ end }}
 
 {{ define "toc" }}
-  <section class="toc-section" id="toc-section">
-    <div class="toc-holder">
-      <button class="btn btn-sm" id="toc-toggler" onclick="toggleTOC();">
-        <i class="fas fa-compress"></i>
-      </button>
-      <h5 class="text-center">Table of Contents</h5>
+  <section class="toc-section">
+    <div class="toc-holder" id="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
       <hr>
       <div class="toc">
         {{ .TableOfContents }}
