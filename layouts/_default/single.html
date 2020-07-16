@@ -79,6 +79,7 @@
 
 {{ define "toc" }}
   <section class="toc-section">
+    {{ if site.Params.enableTOC }}
     <div class="toc-holder" id="toc-holder">
       <h5 class="text-center pl-3">Table of Contents</h5>
       <hr>
@@ -86,6 +87,7 @@
         {{ .TableOfContents }}
       </div>
     </div>
+    {{ end }}
   </section>
 {{ end }}
 
