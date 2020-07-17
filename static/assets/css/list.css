@@ -7,6 +7,7 @@
 
 .content-section {
   flex: 80%;
+  order: 2;
   /* background-color: lightseagreen; */
   padding: 0;
   position: relative;
@@ -133,41 +134,38 @@
     margin-top: 32px;
   }
 
-  .post-card-holder .filtr-item {
-    margin: 10px;
-    width: 47vw !important;
-  }
 
   .post-card-holder .card {
-    max-width: 47vw !important;
-  }
-
-  .content.overley .post-card-holder .filtr-item {
-    margin: 10px;
-    width: 55vw !important;
-  }
-
-  .content.overley .post-card-holder .card {
-    max-width: 55vw !important;
+    max-width: 47vw;
   }
 }
 @media only screen and (max-width: 576px) {
   .wrapper {
-    display: block;
+    padding-left: 0px;
+    padding-right: 0px;
+    flex-flow: column;
+    overflow: hidden;
   }
+  .content-section{
+    flex: 100%;
+    padding-left: 0;
+    width: 100%;
+  }
+
   .content {
-    width: 100vw;
-    left: 0;
-    display: block;
-    padding-left: 2vw;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  .content.overley {
-    width: 100vw;
-    left: 0;
-    padding-left: 2vw;
+  .content.hide {
+    margin-top: 0;
   }
 
+  #toc-toggler{
+    visibility: hidden;
+  }
+  
   .content-cards {
     padding-top: 20px;
     padding-left: 0px;
@@ -175,41 +173,20 @@
     -webkit-transition: all ease-out 0.5s;
   }
 
-  .content.overley .content-cards {
-    padding-top: 0px;
-    padding-left: 0px;
-    transition: all ease-out 0.5s;
-    -webkit-transition: all ease-out 0.5s;
-  }
-
   .post-card-holder {
     margin: 0;
-    margin-top: 32px;
+    margin-top: 1.5rem;
     transition: all ease-out 0.5s;
     -webkit-transition: all ease-out 0.5s;
   }
 
-  .content.overley .post-card-holder {
-    margin: 0;
-    transition: all ease-out 0.5s;
-    -webkit-transition: all ease-out 0.5s;
+  .post-card-holder.hide{
+    margin-top: 0;
   }
-
-  .post-card-holder .filtr-item {
-    margin: 0px;
-    width: 95vw !important;
-  }
-
+  
   .post-card-holder .card {
-    max-width: 90vw !important;
-  }
-
-  .content.overley .post-card-holder .filtr-item {
-    margin: 0px;
-    width: 95vw !important;
-  }
-
-  .content.overley .post-card-holder .card {
-    max-width: 95vw !important;
+    margin-left: 2%;
+    margin-right: 2%;
+    max-width: 96%;
   }
 }

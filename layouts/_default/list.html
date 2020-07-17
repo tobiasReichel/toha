@@ -4,25 +4,25 @@
 {{ end }}
 
 {{ define "navbar" }}
-    {{ partial "navigators/navbar-2.html" (dict "baseURL" .Site.BaseURL "title" .Site.Title "hasToggleButton" true "navBrandURL"  .Site.BaseURL ) }}
+    {{ partial "navigators/navbar-2.html" . }}
 {{ end }}
 
 {{ define "sidebar" }}
-<section class="sidebar-section" id="sidebar-holder">
-  <div class="sidebar-holder">
-    <div class="sidebar" id="sidebar">
-      <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
-      <div class="sidebar-tree">
-        <ul class="tree" id="tree">
-          <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
-          <div class="subtree">
-              {{ partial "navigators/sidebar.html" (dict "menus" .Site.Menus.sidebar "ctx" .) }}
-          </div>
-        </ul>
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                {{ partial "navigators/sidebar.html" (dict "menus" .Site.Menus.sidebar "ctx" .) }}
+            </div>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 {{ end }}
 
 {{ define "content" }}

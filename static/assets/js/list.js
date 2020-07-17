@@ -42,15 +42,3 @@ var isMobile = false, isTablet = false, isLaptop = false;
     adjustPostCardsHeight();
   });
 })(jQuery);
-
-// toggle sidebar on click
-function toggleSidebar() {
-  document.getElementById("sidebar").classList.toggle("hide");
-  document.getElementById("content").classList.toggle("overley");
-
-  // if it is mobile device. then scroll to top.
-  if (isMobile && $("#sidebar").hasClass("hide")) {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-}

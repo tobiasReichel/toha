@@ -17,6 +17,7 @@ body {
 
 .content-section {
   flex: 60%;
+  order: 2;
   /* background-color: lightseagreen; */
   padding: 0;
   position: relative;
@@ -28,8 +29,11 @@ body {
 }
 .toc-section {
   flex: 20%;
+  order: 3;
   max-width: 20%;
   /* background-color: lightpink; */
+  transition: all ease-out 0.5s;
+  -webkit-transition: all ease-out 0.5s;
 }
 
 .toc-holder {
@@ -44,21 +48,6 @@ body {
   -webkit-transition: all ease-out 0.3s;
 }
 
-.toc-holder.minimize {
-  display: none;
-  transition: all ease-out 0.3s;
-  -webkit-transition: all ease-out 0.3s;
-  margin-right: 0;
-}
-
-.toc-holder.minimize .toc,
-.toc-holder.minimize hr,
-.toc-holder.minimize h5 {
-  display: none;
-  transition: all ease-out 0.3s;
-  -webkit-transition: all ease-out 0.3s;
-}
-
 .toc {
   position: relative;
   padding-top: 0px;
@@ -66,18 +55,6 @@ body {
   -webkit-transition: all ease-out 0.3s;
 }
 
-#toc-toggler {
-  position: relative;
-  float: right;
-  box-shadow: none;
-  border: none;
-  background-color: #f9fafc;
-}
-
-.toc-holder.minimize #toc-toggler {
-  background-color: #3c4858;
-  color: #f9fafc;
-}
 .toc nav {
   padding-top: 0px;
   margin-top: 0px;
@@ -337,6 +314,7 @@ mark {
   .wrapper {
     padding-left: 0px;
     padding-right: 0px;
+    flex-flow: column;
     overflow: hidden;
   }
   .container {
@@ -346,12 +324,62 @@ mark {
 @media only screen and (max-width: 576px) {
   .wrapper {
     padding: 0px;
+    display: flex;
+  }
+
+  .content-section{
+    padding:0;
+    flex: 100%;
+    order: 3;
+  }
+
+  .toc-section{
+    order: 2;
+    width: 100%;
+    height: 0;
+    max-height: 0;
+    max-width: 100%;
+    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
+  }
+
+  .toc-section.hide{
+    margin-top: 2.5rem;
+    position: relative;
+    /* height: fit-content; */
+    flex: 100%;
+    height: fit-content;
+    max-height: 200vh;
+    padding-right: 0;
+    box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
+    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
+  }
+
+  .toc-holder{
+    max-height: 0;
+    overflow: hidden;
+    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
+  }
+  .toc-section.hide .toc-holder{
+    max-height: 200vh;
+    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
+  }
+
+  .navbar-toggler {
+    display: block;
   }
 
   .hero-area {
     height: 200px;
+    margin-top: 1rem;
   }
-
+  
+  .hero-area.hide{
+    margin-top: 1rem;
+  }
   .page-content {
     padding: 0px;
   }

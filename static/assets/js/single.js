@@ -49,31 +49,15 @@ var isMobile = false, isTablet = false, isLaptop = false;
     elems = toc.getElementsByTagName("li");
     for (let i = 0; i < elems.length; i++) {
       elems[i].classList.add("nav-item");
+      if (isMobile) {
+        elems[i].setAttribute("onclick", "toggleTOC()");
+      }
     }
     // add "nav-link" class to the "a" elements
     elems = toc.getElementsByTagName("a");
     for (let i = 0; i < elems.length; i++) {
       elems[i].classList.add("nav-link");
     }
+
   });
 })(jQuery);
-
-// toggle sidebar on click
-function toggleSidebar() {
-  document.getElementById("sidebar-holder").classList.toggle("hide");
-  document.getElementById("sidebar-toggler").classList.toggle("align-left");
-  console.log("Sidebar Toggler clicked...");
-  // if it is mobile device. then scroll to top.
-  // if (isMobile && $("#sidebar").hasClass("hide")) {
-  //   document.body.scrollTop = 0;
-  //   document.documentElement.scrollTop = 0;
-  // }
-}
-
-// toggle table of contents on click
-function toggleTOC() {
-  document.getElementById("toc-holder").classList.toggle("minimize");
-  let btn = document.getElementById("toc-toggler");
-  btn.children[0].classList.toggle("fa-compress");
-  btn.children[0].classList.toggle("fa-stream");
-}

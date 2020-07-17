@@ -8,11 +8,11 @@
 {{ end }}
 
 {{ define "navbar" }}
-    {{ partial "navigators/navbar-2.html" (dict "baseURL" .Site.BaseURL "title" .Site.Title "hasToggleButton" false "navBrandURL"  "/posts") }}
+    {{ partial "navigators/navbar-2.html" . }}
 {{ end }}
 
 {{ define "sidebar" }}
-  <section class="sidebar-section" id="sidebar-holder">
+  <section class="sidebar-section" id="sidebar-section">
     <div class="sidebar-holder">
       <div class="sidebar" id="sidebar">
         <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
@@ -34,7 +34,7 @@
   <div class="content">
     <div class="container p-0 read-area">
       <!--Hero Area-->
-      <div class="hero-area col-sm-12" style='background-image: url({{ strings.TrimSuffix "/" .Site.BaseURL }}{{ partial "helpers/get-hero.html" . }});'>
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url({{ strings.TrimSuffix "/" .Site.BaseURL }}{{ partial "helpers/get-hero.html" . }});'>
       </div>
   
       <!--Content Start-->
@@ -78,9 +78,9 @@
 {{ end }}
 
 {{ define "toc" }}
-  <section class="toc-section">
+  <section class="toc-section" id="toc-section">
     {{ if site.Params.enableTOC }}
-    <div class="toc-holder" id="toc-holder">
+    <div class="toc-holder">
       <h5 class="text-center pl-3">Table of Contents</h5>
       <hr>
       <div class="toc">

@@ -42,6 +42,13 @@ body {
     color: #207089;
   }
   
+  .nav-button{
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    color: #8392A5;
+  }
+
   .btn-dark {
     background-color: #3c4858;
     border-color: #3c4858;

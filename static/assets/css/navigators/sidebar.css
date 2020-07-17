@@ -1,7 +1,10 @@
 .sidebar-section {
+  order: 1;
   flex: 20%;
   max-width: 20%;
   /* background-color: lightsalmon; */
+  transition: all ease-out 0.5s;
+  -webkit-transition: all ease-out 0.5s;
 }
 
 .sidebar-holder {
@@ -10,16 +13,12 @@
   background-color: #f9fafc;
   width: 100%;
   max-width: 22rem;
-  transition: all ease-out 0.3s;
-  -webkit-transition: all ease-out 0.3s;
   box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
   overflow: auto;
-}
-.sidebar-holder.hide {
-  width: 0rem;
   transition: all ease-out 0.3s;
   -webkit-transition: all ease-out 0.3s;
 }
+
 .sidebar {
   background: #f9fafc;
   min-height: 100vh;
@@ -27,42 +26,10 @@
   -webkit-transition: all ease-out 0.3s;
 }
 
-#sidebar-toggler {
-  position: fixed;
-  top: 4.5rem;
-  left: 20rem;
-  border: none;
-  z-index: 1000;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-}
-
-#sidebar-toggler.align-left {
-  left: 0rem;
-}
-#sidebar-toggler:focus {
-  box-shadow: none;
-  border: none;
-  background-color: #3c4858;
-}
-#sidebar-toggler:hover {
-  background-color: #248aaa;
-}
-
 .sidebar-tree {
   padding-left: 1rem;
   position: relative;
   width: max-content;
-}
-
-.sidebar.hide {
-  position: relative;
-  width: 0;
-  transition: all ease-out 0.3s;
-  -webkit-transition: all ease-out 0.3s;
-  z-index: -1001;
 }
 
 #search-box {
@@ -229,15 +196,39 @@ a.focused {
   }
 }
 @media only screen and (max-width: 576px) {
-  #search-box {
-    width: 85vw;
-    height: 35px;
-    padding-left: 5px;
-    margin-top: 30px;
+  .sidebar-section {
+    width: 100%;
+    max-height: 0;
+    max-width: 100%;
+    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
   }
+
+  .sidebar-section.hide {
+    margin-top: 2rem;
+    position: relative;
+    height: fit-content;
+    flex: none;
+    max-height: 200vh;
+    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
+  }
+
+  .sidebar-holder{
+    max-height: 0;
+    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
+  }
+
+  .sidebar-section.hide .sidebar-holder{
+    max-height: 200vh;
+    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
+  }
+
   .sidebar {
     position: relative;
-    max-height: 0;
+    max-height: fit-content;
     width: 100vw;
     min-height: 0;
     overflow: hidden;
@@ -246,26 +237,14 @@ a.focused {
   }
 
   .sidebar-tree {
-    position: relative;
+    margin-left: 0rem;
+    max-height: 0;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
   }
-
-  .sidebar.hide {
-    position: relative;
-    z-index: 1001;
-    width: 100vw;
-    max-height: 100vh;
-    overflow: hidden;
-    transition: all ease-out 0.5s;
-    -webkit-transition: all ease-out 0.5s;
-  }
-
-  .sidebar-tree {
-    margin-left: 1.5rem;
-  }
-
-  .sidebar.hide .sidebar-tree {
-    margin-left: 1.5rem;
-    transition: all 0.3s ease-out;
-    -webkit-transition: all 0.3s ease-out;
+  .sidebar-section.hide .sidebar-tree{
+    max-height: 200vh;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
   }
 }
